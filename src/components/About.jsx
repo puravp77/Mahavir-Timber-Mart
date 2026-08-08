@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Sparkles, CheckCircle2, Award, Building2, MapPin, ArrowRight } from 'lucide-react';
-import { COMPANY_INFO } from '../data/timberData';
+import { COMPANY_INFO, getAssetUrl } from '../data/timberData';
 
 export default function About() {
   return (
@@ -24,7 +24,7 @@ export default function About() {
           >
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 group">
               <img
-                src="/assets/2.JPG"
+                src={getAssetUrl("assets/2.JPG")}
                 alt="SHREE MAHAVIR TIMBER MART Stock Yard"
                 className="w-full h-[320px] sm:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
               />

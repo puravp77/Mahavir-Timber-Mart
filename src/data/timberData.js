@@ -1,7 +1,15 @@
+export const getAssetUrl = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  return baseUrl.endsWith('/') ? `${baseUrl}${cleanPath}` : `${baseUrl}/${cleanPath}`;
+};
+
 export const COMPANY_INFO = {
   name: "SHREE MAHAVIR TIMBER MART",
   tagline: "Quality Timber. Lasting Trust.",
-  logo: "/assets/Logo.jpeg",
+  logo: getAssetUrl("assets/Logo.jpeg"),
   instagramHandle: "mahavir.timber.mart",
   instagramUrl: "https://www.instagram.com/mahavir.timber.mart",
   description: "SHREE MAHAVIR TIMBER MART supplies premium quality timber logs, wood planks and natural hardwood for furniture manufacturers, architects, builders and interior designers throughout Gujarat.",
@@ -33,7 +41,7 @@ export const PRODUCTS = [
     id: "timber-logs",
     title: "Timber Logs",
     category: "Hardwood Logs",
-    image: "/assets/1.png",
+    image: getAssetUrl("assets/1.png"),
     description: "Premium quality raw and debarked hardwood timber logs directly supplied for sawmills, structural work, and large construction.",
     features: [
       "High natural oil content & weather resilience",
@@ -48,7 +56,7 @@ export const PRODUCTS = [
     id: "valsadi-wood",
     title: "Valsadi Teak Wood",
     category: "Signature Teak",
-    image: "/assets/2.JPG",
+    image: getAssetUrl("assets/2.JPG"),
     description: "Renowned Gujarat Valsadi teak wood with beautiful natural grain, exceptional durability, and rich termite resistance.",
     features: [
       "Authentic heritage Valsadi Teak timber",
@@ -63,7 +71,7 @@ export const PRODUCTS = [
     id: "wood-planks",
     title: "Furniture Wood Planks",
     category: "Precision Slabs",
-    image: "/assets/3.JPG",
+    image: getAssetUrl("assets/3.JPG"),
     description: "Precision-sawn seasoned hardwood planks ready for immediate use by furniture manufacturers, carpenters, and interior designers.",
     features: [
       "Uniform thickness & zero warping tolerances",
@@ -78,7 +86,7 @@ export const PRODUCTS = [
     id: "custom-timber",
     title: "Custom Cut Timber",
     category: "Bespoke Millwork",
-    image: "/assets/4.JPG",
+    image: getAssetUrl("assets/4.JPG"),
     description: "Tailor-made wood cuts produced according to exact project blueprints, CAD drawings, and architectural specifications.",
     features: [
       "Custom cross-sections & beam profiles",
@@ -93,7 +101,7 @@ export const PRODUCTS = [
     id: "live-edge",
     title: "Live Edge Hardwood Slabs",
     category: "Architectural Statement",
-    image: "/assets/5.JPG",
+    image: getAssetUrl("assets/5.JPG"),
     description: "Natural organic edge hardwood timber slabs for luxury dining tables, executive conference desks, and feature wall paneling.",
     features: [
       "Preserved natural organic tree contours",
@@ -108,7 +116,7 @@ export const PRODUCTS = [
     id: "architectural-beams",
     title: "Structural Architectural Beams",
     category: "Heavy Timber",
-    image: "/assets/6.JPG",
+    image: getAssetUrl("assets/6.JPG"),
     description: "Heavy-duty structural wood columns and ceiling beams engineered for luxury villas, resort pergolas, and roof trusses.",
     features: [
       "Exceptional flexural strength & beam span limit",
@@ -126,42 +134,42 @@ export const GALLERY_ITEMS = [
     id: 1,
     title: "Premium Timber Log Stack",
     category: "Logs",
-    image: "/assets/1.png",
+    image: getAssetUrl("assets/1.png"),
     description: "High-grade hardwood logs stocked at our Surat yard."
   },
   {
     id: 2,
     title: "Valsadi Teak Wood Stock",
     category: "Valsadi Wood",
-    image: "/assets/2.JPG",
+    image: getAssetUrl("assets/2.JPG"),
     description: "Authentic Valsadi teak wood logs with deep natural grain."
   },
   {
     id: 3,
     title: "Furniture Grade Wood Planks",
     category: "Planks",
-    image: "/assets/3.JPG",
+    image: getAssetUrl("assets/3.JPG"),
     description: "Seasoned hardwood planks ready for furniture manufacturing."
   },
   {
     id: 4,
     title: "Custom Timber Cut Yard",
     category: "Custom Millwork",
-    image: "/assets/4.JPG",
+    image: getAssetUrl("assets/4.JPG"),
     description: "Custom cut timber tailored to architectural blueprints."
   },
   {
     id: 5,
     title: "Natural Live Edge Timber Slabs",
     category: "Live Edge",
-    image: "/assets/5.JPG",
+    image: getAssetUrl("assets/5.JPG"),
     description: "Exotic live-edge hardwood timber for bespoke dining tables."
   },
   {
     id: 6,
     title: "Heavy Structural Beams & Logs",
     category: "Architectural Beams",
-    image: "/assets/6.JPG",
+    image: getAssetUrl("assets/6.JPG"),
     description: "Heavy structural timber sectioning for villas & resorts."
   }
 ];

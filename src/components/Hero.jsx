@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, ArrowRight, ShieldCheck, TreePine, Layers, Truck, Sparkles, Volume2, VolumeX } from 'lucide-react';
-import { COMPANY_INFO, FLOATING_CARDS } from '../data/timberData';
+import { COMPANY_INFO, FLOATING_CARDS, getAssetUrl } from '../data/timberData';
 
 const iconMap = {
   TreePine: TreePine,
@@ -28,8 +28,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          src="/assets/Vid-1.mp4"
-          poster="/assets/1.png"
+          src={getAssetUrl("assets/Vid-1.mp4")}
+          poster={getAssetUrl("assets/1.png")}
           autoPlay
           loop
           muted

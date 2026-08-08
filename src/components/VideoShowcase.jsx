@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX, Heart, Share2, Music, Send, ExternalLink } from 'lucide-react';
 import { FaInstagram } from 'react-icons/fa6';
-import { COMPANY_INFO } from '../data/timberData';
+import { COMPANY_INFO, getAssetUrl } from '../data/timberData';
 
 function ReelCard({ videoUrl, posterUrl, caption, initialLikes = 1248 }) {
   const videoRef = useRef(null);
@@ -235,16 +235,16 @@ export default function VideoShowcase() {
           
           {/* Reel Card 1: Vid-1.mp4 */}
           <ReelCard
-            videoUrl="/assets/Vid-1.mp4"
-            posterUrl="/assets/1.png"
+            videoUrl={getAssetUrl("assets/Vid-1.mp4")}
+            posterUrl={getAssetUrl("assets/1.png")}
             caption="Precision timber log milling & saw cutting at Surat yard. 🪵✨"
             initialLikes={1420}
           />
 
           {/* Reel Card 2: Vid-2.mp4 */}
           <ReelCard
-            videoUrl="/assets/Vid-2.mp4"
-            posterUrl="/assets/2.JPG"
+            videoUrl={getAssetUrl("assets/Vid-2.mp4")}
+            posterUrl={getAssetUrl("assets/2.JPG")}
             caption="Fresh arrivals of natural hardwood logs & Valsadi teak wood in Surat. 🪵🌲"
             initialLikes={1890}
           />
